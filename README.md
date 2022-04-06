@@ -1,7 +1,7 @@
 # C1 Coding Assignment
 
 ## Overview
-Here are my solutions to the 2 example questions and the bonus question. I made a simple Typescript project to be able to use types and add some basic testing for the functions using Jest.
+Here are my solutions to the 2 example questions and the bonus question. I made a simple Typescript project to be able to use types and add some basic testing for the functions using Jest. Use 'npm install' from the command line to install the required packages, then you can use 'npm test' to run through all the unit tests.
 
 ## Question One:
 
