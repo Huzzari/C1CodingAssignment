@@ -23,11 +23,11 @@ export function exampleTwo(inputAccounts: account[]): account[] {
     // Create an empty array to add the correct accounts into
     let result: account[] = [];
 
-    // Loop through the input accounts
     inputAccounts.forEach((element) => {
-        // Check each element, if balance is > 200 then push the account to the result array
-        if (element.balance >= 100){
-            result.push(element)
+        const parsedBalance: number = Number(element.balance);
+        // If the balance string is a valid number and it is over 100, push to our result array
+        if(!isNaN(parsedBalance) && parsedBalance > 100){
+            result.push(element);
         }
     });
 

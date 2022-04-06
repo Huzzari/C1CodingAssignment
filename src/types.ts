@@ -2,7 +2,7 @@ export interface account {
     accountId: number,
     accountName: string,
     accountType: 'chequing' | 'savings',
-    balance: number
+    balance: string
 }
 
 export interface sumAndAverageResult {
