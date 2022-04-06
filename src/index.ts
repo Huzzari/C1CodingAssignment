@@ -23,10 +23,34 @@ export function exampleTwo(inputAccounts: account[]): account[] {
     // Create an empty array to add the correct accounts into
     let result: account[] = [];
 
+    if (!Array.isArray(inputAccounts) || !inputAccounts.length) {
+        // Invalid array, null, or undefined. Return empty array.
+        return result;
+    }
+
     inputAccounts.forEach((element) => {
         const parsedBalance: number = Number(element.balance);
         // If the balance string is a valid number and it is over 100, push to our result array
         if(!isNaN(parsedBalance) && parsedBalance > 100){
+            result.push(element);
+        }
+    });
+
+    return result;
+}
+
+// Takes in an array of any type and returns an array of unique values
+export function bonusQuestion(inputArray: any[]): any[]{
+    let result: any[] = [];
+
+    if (!Array.isArray(inputArray) || !inputArray.length) {
+        // Invalid array, null, or undefined. Return empty array.
+        return result;
+    }
+
+    // For each element in the array, if we haven't already added it to the result array, add it
+    inputArray.forEach((element) => {
+        if(!result.includes(element)){
             result.push(element);
         }
     });
