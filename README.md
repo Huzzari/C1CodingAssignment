@@ -17,13 +17,13 @@ At the time of writing this there was no specification for the type of value tha
 
 ### Notes
 #### Strings:
-This function is case sensitive, I am assuming that APPLE and apple are unique. Empty strings and whitespace are also valid strings for this function.
+This function is case sensitive, I am assuming that 'APPLE' and 'apple' are unique. Empty strings and whitespace are also valid strings for this function.
 
 #### Numbers:
-This function considers 5.0 and 5 to be the same number, and not unique. While they are slightly different, one has a decimal place and one doesn't, they are the same value numerically. 5 and 5.1 are unique.
+This function considers 5.0 and 5 to be the same number, and not unique. While they are slightly different syntax, one has a decimal place and one doesn't, they are the same value numerically. 5 and 5.1 are considered unique.
 
 #### Boolean:
-For a strict boolean array, you can only have one of each present.
+For a strict boolean array, you can only have one of each present (true, false).
 
 #### Mixed:
 You can have an any array with strings, booleans, numbers, null, undefined, all that jazz. As far as uniqueness, I am considering the following:
