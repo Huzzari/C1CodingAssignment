@@ -219,8 +219,46 @@ describe('bonusQuestion', () => {
 
         // Assert
         expect(testResult.length).toBe(2);
-        expect(testResult[0]).toBeTruthy;
-        expect(testResult[1]).toBeFalsy;
+        expect(testResult[0]).toBeTruthy();
+        expect(testResult[1]).toBeFalsy();
+    });
+
+    test('should return unique booleans and other values', () => {
+        // Arrange
+        const testInput: any[] = [
+            true,
+            false,
+            0,
+            1,
+            null,
+            undefined,
+            'true',
+            'false',
+            true,
+            false,
+            0,
+            1,
+            null,
+            undefined,
+            'TRUE',
+            'FaLsE'
+        ];
+
+        // Act
+        const testResult = bonusQuestion(testInput);
+
+        // Assert
+        expect(testResult.length).toBe(10);
+        expect(testResult[0]).toBeTruthy();
+        expect(testResult[1]).toBeFalsy();
+        expect(testResult[2]).toBe(0);
+        expect(testResult[3]).toBe(1);
+        expect(testResult[4]).toBe(null);
+        expect(testResult[5]).toBe(undefined);
+        expect(testResult[6]).toBe('true');
+        expect(testResult[7]).toBe('false');
+        expect(testResult[8]).toBe('TRUE');
+        expect(testResult[9]).toBe('FaLsE');
     });
 
 
