@@ -1,4 +1,4 @@
-import {exampleOne, exampleTwo} from './index';
+import {bonusQuestion, exampleOne, exampleTwo} from './index';
 import {account} from "./types";
 
 describe('exampleOne', () => {
@@ -74,6 +74,7 @@ describe('exampleTwo', () => {
             {accountId: 5, accountName: 'Groceries Money', accountType: 'chequing', balance: '478.30'},
             {accountId: 6, accountName: 'For Renovations', accountType: 'savings', balance: '100.50'}
         ];
+
         // Act
         const testResult = exampleTwo(testInput);
 
@@ -96,6 +97,7 @@ describe('exampleTwo', () => {
             {accountId: 5, accountName: 'Groceries Money', accountType: 'chequing', balance: '100'},
             {accountId: 6, accountName: 'For Renovations', accountType: 'savings', balance: '100.50'}
         ];
+
         // Act
         const testResult = exampleTwo(testInput);
 
@@ -114,6 +116,7 @@ describe('exampleTwo', () => {
             {accountId: 5, accountName: 'Groceries Money', accountType: 'chequing', balance: '100'},
             {accountId: 6, accountName: 'For Renovations', accountType: 'savings', balance: '99.50'}
         ];
+
         // Act
         const testResult = exampleTwo(testInput);
 
@@ -131,10 +134,96 @@ describe('exampleTwo', () => {
             {accountId: 5, accountName: 'Groceries Money', accountType: 'chequing', balance: '100'},
             {accountId: 6, accountName: 'For Renovations', accountType: 'savings', balance: '99.50'}
         ];
+
         // Act
         const testResult = exampleTwo(testInput);
 
         // Assert
         expect(testResult.length).toBe(0);
     });
+});
+
+describe('bonusQuestion', () => {
+    test('should return empty array if input is empty', () => {
+        // Arrange
+        const testInput: any[] = [];
+
+        // Act
+        const testResult = bonusQuestion(testInput);
+
+        // Assert
+        expect(testResult.length).toBe(0);
+    });
+
+    test('should return unique numbers', () => {
+        // Arrange
+        const testInput: number[] = [1, 2, 4, 5, 7, 4, 6, 4, 8, 8.0, 8, 5, 6, 3];
+
+        // Act
+        const testResult = bonusQuestion(testInput);
+
+        // Assert
+        expect(testResult.length).toBe(8);
+        expect(testResult[0]).toBe(1);
+        expect(testResult[1]).toBe(2);
+        expect(testResult[2]).toBe(4);
+        expect(testResult[3]).toBe(5);
+        expect(testResult[4]).toBe(7);
+        expect(testResult[5]).toBe(6);
+        expect(testResult[6]).toBe(8);
+        expect(testResult[7]).toBe(3);
+    });
+
+    test('should return unique strings', () => {
+        // Arrange
+        const testInput: string[] = [
+            'apple',
+            'banana',
+            'ApPlE',
+            'orange',
+            'grape',
+            'orange',
+            'Grape',
+            'MELON',
+            '',
+            '',
+        ];
+
+        // Act
+        const testResult = bonusQuestion(testInput);
+
+        // Assert
+        expect(testResult.length).toBe(8);
+        expect(testResult[0]).toBe('apple');
+        expect(testResult[1]).toBe('banana');
+        expect(testResult[2]).toBe('ApPlE');
+        expect(testResult[3]).toBe('orange');
+        expect(testResult[4]).toBe('grape');
+        expect(testResult[5]).toBe('Grape');
+        expect(testResult[6]).toBe('MELON');
+        expect(testResult[7]).toBe('');
+    });
+
+    test('should return unique booleans', () => {
+        // Arrange
+        const testInput: boolean[] = [
+            true,
+            false,
+            false,
+            true,
+            true
+        ];
+
+        // Act
+        const testResult = bonusQuestion(testInput);
+
+        // Assert
+        expect(testResult.length).toBe(2);
+        expect(testResult[0]).toBeTruthy;
+        expect(testResult[1]).toBeFalsy;
+    });
+
+
+
+
 });

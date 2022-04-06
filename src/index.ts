@@ -31,7 +31,7 @@ export function exampleTwo(inputAccounts: account[]): account[] {
     inputAccounts.forEach((element) => {
         const parsedBalance: number = Number(element.balance);
         // If the balance string is a valid number and it is over 100, push to our result array
-        if(!isNaN(parsedBalance) && parsedBalance > 100){
+        if (!isNaN(parsedBalance) && parsedBalance > 100) {
             result.push(element);
         }
     });
@@ -39,8 +39,9 @@ export function exampleTwo(inputAccounts: account[]): account[] {
     return result;
 }
 
-// Takes in an array of any type and returns an array of unique values
-export function bonusQuestion(inputArray: any[]): any[]{
+// Takes in an array of any type and returns an array of unique values.
+// Note, this is not yet tested / coded to handle anything but basic types.
+export function bonusQuestion(inputArray: any[]): any[] {
     let result: any[] = [];
 
     if (!Array.isArray(inputArray) || !inputArray.length) {
@@ -50,7 +51,7 @@ export function bonusQuestion(inputArray: any[]): any[]{
 
     // For each element in the array, if we haven't already added it to the result array, add it
     inputArray.forEach((element) => {
-        if(!result.includes(element)){
+        if (!result.includes(element)) {
             result.push(element);
         }
     });
