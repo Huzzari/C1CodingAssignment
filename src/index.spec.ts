@@ -1,13 +1,13 @@
-import {bonusQuestion, exampleOne, exampleTwo} from './index';
+import {bonusQuestion, questionOne, questionTwo} from './index';
 import {account} from "./types";
 
-describe('exampleOne', () => {
+describe('questionOne', () => {
     test('should return expected result when input is valid', () => {
         // Arrange
         const testInput: number[] = [1, 2, 3, 4, 5, 6];
 
         //Act
-        const testResult = exampleOne(testInput);
+        const testResult = questionOne(testInput);
 
         //Assert
         expect(testResult.sum).toBe(21);
@@ -19,7 +19,7 @@ describe('exampleOne', () => {
         const testInput: number[] = [5];
 
         //Act
-        const testResult = exampleOne(testInput);
+        const testResult = questionOne(testInput);
 
         //Assert
         expect(testResult.sum).toBe(5);
@@ -31,7 +31,7 @@ describe('exampleOne', () => {
         const testInput: number[] = [-2, -3, 5];
 
         //Act
-        const testResult = exampleOne(testInput);
+        const testResult = questionOne(testInput);
 
         //Assert
         expect(testResult.sum).toBe(0);
@@ -43,7 +43,7 @@ describe('exampleOne', () => {
         const testInput: number[] = [2.3, 4.9, 7.2];
 
         //Act
-        const testResult = exampleOne(testInput);
+        const testResult = questionOne(testInput);
 
         //Assert
         expect(testResult.sum).toBe(14.4);
@@ -55,7 +55,7 @@ describe('exampleOne', () => {
         const testInput: number[] = [];
 
         //Act
-        const testResult = exampleOne(testInput);
+        const testResult = questionOne(testInput);
 
         //Assert
         expect(testResult.sum).toBe(null);
@@ -63,7 +63,7 @@ describe('exampleOne', () => {
     });
 });
 
-describe('exampleTwo', () => {
+describe('questionTwo', () => {
     test('should return correct list of accounts', () => {
         // Arrange
         const testInput: account[] = [
@@ -76,7 +76,7 @@ describe('exampleTwo', () => {
         ];
 
         // Act
-        const testResult = exampleTwo(testInput);
+        const testResult = questionTwo(testInput);
 
         // Assert
         expect(testResult.length).toBe(5);
@@ -99,7 +99,7 @@ describe('exampleTwo', () => {
         ];
 
         // Act
-        const testResult = exampleTwo(testInput);
+        const testResult = questionTwo(testInput);
 
         // Assert
         expect(testResult.length).toBe(1);
@@ -118,7 +118,7 @@ describe('exampleTwo', () => {
         ];
 
         // Act
-        const testResult = exampleTwo(testInput);
+        const testResult = questionTwo(testInput);
 
         // Assert
         expect(testResult.length).toBe(0);
@@ -136,7 +136,7 @@ describe('exampleTwo', () => {
         ];
 
         // Act
-        const testResult = exampleTwo(testInput);
+        const testResult = questionTwo(testInput);
 
         // Assert
         expect(testResult.length).toBe(0);

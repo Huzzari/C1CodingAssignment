@@ -1,7 +1,7 @@
 import {account, sumAndAverageResult} from "./types";
 
 // Takes in an array of numbers and returns the sum and average of that list
-export function exampleOne(inputNumbers: number[]): sumAndAverageResult {
+export function questionOne(inputNumbers: number[]): sumAndAverageResult {
     let result: sumAndAverageResult = {
         average: null,
         sum: null
@@ -19,7 +19,7 @@ export function exampleOne(inputNumbers: number[]): sumAndAverageResult {
 }
 
 // Takes in an array of accounts and returns an array of accounts with a balance over $100
-export function exampleTwo(inputAccounts: account[]): account[] {
+export function questionTwo(inputAccounts: account[]): account[] {
     // Create an empty array to add the correct accounts into
     let result: account[] = [];
 
