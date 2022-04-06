@@ -1,4 +1,4 @@
-# C1CodingAssignment
+# C1 Coding Assignment
 
 ## Overview
 Here are my solutions to the 2 example questions and the bonus question. I made a simple Typescript project to be able to use types and add some basic testing for the functions using Jest.
